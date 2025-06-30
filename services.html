@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loan Services - CrediNexa</title>
+  <title>CrediNexa - Trusted Loan Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,12 +11,25 @@
     header, footer { background-color: #003366; color: #fff; text-align: center; padding: 20px 10px; }
     nav { display: flex; justify-content: center; background: #f4f4f4; padding: 10px 0; }
     nav a { margin: 0 15px; text-decoration: none; color: #003366; font-weight: 500; }
-    .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-    .section h2 { color: #003366; margin-bottom: 20px; text-align: center; }
-    .loan-type { margin-bottom: 40px; }
-    .loan-type h3 { color: #007bff; margin-bottom: 10px; }
-    .loan-type ul { padding-left: 20px; margin-top: 10px; }
-    footer p { margin: 5px 0; }
+    .hero { background: #eaf1fb; text-align: center; padding: 60px 20px; }
+    .hero h1 { font-size: 2.5em; color: #003366; margin-bottom: 10px; }
+    .hero p { font-size: 1.1em; color: #333; margin-bottom: 20px; }
+    .hero a { background: #007bff; color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; }
+    .section { padding: 60px 20px; text-align: center; max-width: 1200px; margin: auto; }
+    .section h2 { color: #003366; margin-bottom: 30px; }
+    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .service-card { flex: 1 1 250px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+    .service-card h3 { color: #007bff; margin-bottom: 10px; }
+    .why-us, .process { background: #f9f9f9; }
+    .form-section { background-color: #f4f8fc; padding: 40px 20px; }
+    form { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    form input, form select, form textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; }
+    form button { background-color: #007bff; color: white; padding: 12px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+    form button:hover { background-color: #0056b3; }
+    footer { background-color: #003366; color: #fff; padding: 20px; text-align: center; }
+    @media (max-width: 768px) {
+      .services { flex-direction: column; align-items: center; }
+    }
   </style>
 </head>
 <body>
@@ -29,54 +42,89 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="partner.html">Partner With Us</a>
     <a href="contact.html">Contact</a>
   </nav>
 
+  <section class="hero">
+    <h1>Fast, Easy & Secure Loan Solutions</h1>
+    <p>Connecting you to top lenders with complete transparency</p>
+    <a href="#loan-form">Apply Now</a>
+  </section>
+
   <section class="section">
     <h2>Our Loan Services</h2>
-
-    <div class="loan-type">
-      <h3>Personal Loans</h3>
-      <p>Quick approval and flexible repayment options for salaried & self-employed individuals.</p>
-      <ul>
-        <li>Loan Amount: ₹50,000 to ₹25 Lakhs</li>
-        <li>Tenure: 12 to 60 months</li>
-        <li>Eligibility: Age 21-60, Minimum Income ₹15,000/month</li>
-        <li>Documents: Aadhaar, PAN, Salary Slip/Bank Statement</li>
-      </ul>
+    <div class="services">
+      <div class="service-card">
+        <h3>Personal Loans</h3>
+        <p>Quick and hassle-free personal loans with minimal documents.</p>
+      </div>
+      <div class="service-card">
+        <h3>Business Loans</h3>
+        <p>Support for your business goals with tailored loan options.</p>
+      </div>
+      <div class="service-card">
+        <h3>Home Loans</h3>
+        <p>Affordable home loan solutions for your dream home.</p>
+      </div>
+      <div class="service-card">
+        <h3>Credit Cards</h3>
+        <p>Compare & apply for top bank credit cards in one place.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="loan-type">
-      <h3>Home Loans</h3>
-      <p>Affordable home financing options from top banks and housing finance companies.</p>
-      <ul>
-        <li>Loan Amount: ₹5 Lakhs to ₹5 Crores</li>
-        <li>Interest Rate: Starts at 8.5%</li>
-        <li>Tenure: Up to 30 years</li>
-        <li>Eligibility: Salaried or Self-employed with minimum 3 years history</li>
-      </ul>
+  <section class="section why-us">
+    <h2>Why Choose CrediNexa?</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Trusted by Thousands</h3>
+        <p>We work with top banks and NBFCs to get you the best offers.</p>
+      </div>
+      <div class="service-card">
+        <h3>100% Digital Process</h3>
+        <p>Paperless, fast, and secure application with real-time tracking.</p>
+      </div>
+      <div class="service-card">
+        <h3>Dedicated Support</h3>
+        <p>Our team is here to help you every step of the way.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="loan-type">
-      <h3>Business Loans</h3>
-      <p>Collateral-free working capital or expansion loans for MSMEs and SMEs.</p>
-      <ul>
-        <li>Loan Amount: ₹1 Lakh to ₹50 Lakhs</li>
-        <li>Documents: GST, ITR, Bank Statements, Business Proof</li>
-        <li>Fast approval with minimal paperwork</li>
-      </ul>
+  <section class="section process">
+    <h2>How It Works</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Step 1</h3>
+        <p>Submit your loan requirement online or via WhatsApp</p>
+      </div>
+      <div class="service-card">
+        <h3>Step 2</h3>
+        <p>We match you with best-fit banks and NBFCs</p>
+      </div>
+      <div class="service-card">
+        <h3>Step 3</h3>
+        <p>Loan is processed and disbursed quickly</p>
+      </div>
     </div>
+  </section>
 
-    <div class="loan-type">
-      <h3>Credit Cards</h3>
-      <p>Apply for the best credit cards from top issuers with rewards, cashback & more.</p>
-      <ul>
-        <li>Lifetime free cards & premium options</li>
-        <li>Instant approval process</li>
-        <li>Track and compare multiple offers</li>
-      </ul>
-    </div>
+  <section id="loan-form" class="form-section">
+    <h2 style="text-align:center; color:#003366; margin-bottom:30px;">Apply for a Loan</h2>
+    <form action="mailto:akanksha@credinexa.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="mobile" placeholder="Mobile Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="loan_type" required>
+        <option value="">Select Loan Type</option>
+        <option value="personal">Personal Loan</option>
+        <option value="business">Business Loan</option>
+        <option value="home">Home Loan</option>
+        <option value="credit">Credit Card</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Any additional details..."></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
   </section>
 
   <footer>
