@@ -18,6 +18,7 @@
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#emi">EMI Calculator</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -71,6 +72,23 @@
     </div>
   </section>
 
+  <!-- EMI Calculator Section -->
+  <section id="emi" class="emi-calculator" data-aos="fade-up">
+    <div class="container">
+      <h2>EMI Calculator</h2>
+      <div class="calculator-box">
+        <label>Loan Amount (₹):</label>
+        <input type="number" id="loanAmount" placeholder="Enter amount">
+        <label>Interest Rate (% per annum):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate">
+        <label>Loan Tenure (in months):</label>
+        <input type="number" id="loanTenure" placeholder="Enter tenure">
+        <button onclick="calculateEMI()">Calculate EMI</button>
+        <div class="emi-result" id="emiResult"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="contact" data-aos="fade-up">
     <div class="container">
@@ -102,10 +120,22 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init({ duration: 1000, once: true });
+
+    function calculateEMI() {
+      const P = parseFloat(document.getElementById('loanAmount').value);
+      const R = parseFloat(document.getElementById('interestRate').value) / 12 / 100;
+      const N = parseFloat(document.getElementById('loanTenure').value);
+
+      if (!P || !R || !N) {
+        document.getElementById('emiResult').innerHTML = '<p style="color:red">Please fill all fields correctly.</p>';
+        return;
+      }
+
+      const EMI = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+      const result = `Estimated EMI: ₹${EMI.toFixed(2)} / month`;
+      document.getElementById('emiResult').innerHTML = `<p style="color:green">${result}</p>`;
+    }
   </script>
 </body>
 </html>
