@@ -3,116 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CrediNexa - Trusted Loan Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>CrediNexa | Smart Loan Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background-color: #fff; }
-    header, footer { background-color: #003366; color: #fff; text-align: center; padding: 20px 10px; }
-    nav { display: flex; justify-content: center; background: #f4f4f4; padding: 10px 0; }
-    nav a { margin: 0 15px; text-decoration: none; color: #003366; font-weight: 500; }
-    .hero { background: #eaf1fb; text-align: center; padding: 60px 20px; }
-    .hero h1 { font-size: 2.5em; color: #003366; margin-bottom: 10px; }
-    .hero p { font-size: 1.1em; color: #333; margin-bottom: 20px; }
-    .hero a { background: #007bff; color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; }
-    .section { padding: 60px 20px; text-align: center; max-width: 1200px; margin: auto; }
-    .section h2 { color: #003366; margin-bottom: 30px; }
-    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-    .service-card { flex: 1 1 250px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
-    .service-card h3 { color: #007bff; margin-bottom: 10px; }
-    .why-us, .process { background: #f9f9f9; }
-    .footer { padding: 40px 20px; color: #fff; background: #003366; text-align: center; }
-    .footer p { margin: 5px 0; }
-    @media (max-width: 768px) {
-      .services { flex-direction: column; align-items: center; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6f9fc;
+      color: #333;
+      overflow-x: hidden;
+      cursor: none;
+    }
+    .cursor {
+      width: 20px; height: 20px;
+      border: 2px solid #007bff;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+    header {
+      background: linear-gradient(90deg, #003366, #007bff);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    nav {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5em;
+      color: #003366;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 600;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2.2em;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>CrediNexa</h1>
-    <p>Your Trusted Loan Partner</p>
-  </header>
+  <div class="cursor" id="cursor"></div>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="partner.html">Partner With Us</a>
-    <a href="contact.html">Contact</a>
+    <div class="logo">CrediNexa</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <section class="hero">
-    <h1>Fast, Easy & Secure Loan Solutions</h1>
-    <p>Connecting you to top lenders with complete transparency</p>
-    <a href="partner.html">Apply Now</a>
-  </section>
+  <header>
+    <h1>Smart, Fast & Secure Loans</h1>
+    <p>Empowering your financial future with seamless loan solutions</p>
+  </header>
 
-  <section class="section">
+  <section class="section" id="services">
     <h2>Our Loan Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Personal Loans</h3>
-        <p>Quick and hassle-free personal loans with minimal documents.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920257.png" alt="Personal Loan">
+        <h3>Personal Loan</h3>
+        <p>Flexible repayment options and fast disbursals.</p>
       </div>
-      <div class="service-card">
-        <h3>Business Loans</h3>
-        <p>Support for your business goals with tailored loan options.</p>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920240.png" alt="Business Loan">
+        <h3>Business Loan</h3>
+        <p>Fuel your business dreams with instant credit.</p>
       </div>
-      <div class="service-card">
-        <h3>Home Loans</h3>
-        <p>Affordable home loan solutions for your dream home.</p>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920202.png" alt="Home Loan">
+        <h3>Home Loan</h3>
+        <p>Make your dream home a reality today.</p>
       </div>
-      <div class="service-card">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Credit Card">
         <h3>Credit Cards</h3>
-        <p>Compare & apply for top bank credit cards in one place.</p>
+        <p>Choose from the best offers from top banks.</p>
       </div>
     </div>
   </section>
 
-  <section class="section why-us">
+  <section class="section" id="about">
     <h2>Why Choose CrediNexa?</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Trusted by Thousands</h3>
-        <p>We work with top banks and NBFCs to get you the best offers.</p>
-      </div>
-      <div class="service-card">
-        <h3>100% Digital Process</h3>
-        <p>Paperless, fast, and secure application with real-time tracking.</p>
-      </div>
-      <div class="service-card">
-        <h3>Dedicated Support</h3>
-        <p>Our team is here to help you every step of the way.</p>
-      </div>
-    </div>
+    <p>We are a government registered MSME providing best-in-class financial assistance through our network of top lenders, ensuring trust, speed, and complete transparency.</p>
   </section>
 
-  <section class="section process">
-    <h2>How It Works</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Step 1</h3>
-        <p>Submit your loan requirement online or via WhatsApp</p>
-      </div>
-      <div class="service-card">
-        <h3>Step 2</h3>
-        <p>We match you with best-fit banks and NBFCs</p>
-      </div>
-      <div class="service-card">
-        <h3>Step 3</h3>
-        <p>Loan is processed and disbursed quickly</p>
-      </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <p>Email: akanksha@credinexa.com</p>
-    <p>Phone / WhatsApp: +91-8287841334</p>
-    <p>&copy; 2025 CrediNexa. All rights reserved.</p>
- <div style="text-align:center; margin: 20px 0;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Emblem_of_India.svg" alt="MSME Registered - CrediNexa" width="80" />
-  <p style="font-size: 14px; color: #444;">CrediNexa is a <strong>Registered MSME</strong> under Govt. of India</p>
-</div>
- </footer>
+  <footer>
+    <p>Contact us at: <strong>akanksha@credinexa.com</strong> | WhatsApp: <strong>+91-8287841334</strong></p>
+    <p>&copy; 2025 CrediNexa | Registered MSME</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+  </script>
 </body>
 </html>
